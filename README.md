@@ -1,4 +1,4 @@
-                                                  ASSIGNMENT 1
+                                                     ASSIGNMENT 1
 PERPOSE OF EACH PROJECT IN THIS ASSIGNMENT
 
 1.JavaApplication1 
