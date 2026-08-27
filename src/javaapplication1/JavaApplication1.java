@@ -16,7 +16,7 @@ public class JavaApplication1 {
      */
     public static void main(String[] args) {
         // creates a new Scanner object named 's' to read input from the console
-        Scanner s = new Scanner(System.in);
+        Scanner k = new Scanner(System.in);
         
         System.out.println("BRIGHT FUTURE TECHNOLOGIES APPLICATION");
         System.out.println("**************************************");
@@ -27,7 +27,7 @@ public class JavaApplication1 {
         System.out.print("Enter (1) to launch menu or any other key to exit ");
         
         //Reads the complete line of text entered by the user and stores it in value
-        String value = s.nextLine();
+        String value = k.nextLine();
         System.out.println("-------------------------------------------------");
         
         //Check if the user typed "1" after removing any accidntal spaces

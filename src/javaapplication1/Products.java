@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Products {
     
-    static Scanner s = new Scanner(System.in);
+    static Scanner k = new Scanner(System.in);
     static ReportData[] storeItems = new ReportData[10]; 
         
     public static int DisplayMenu(){
@@ -26,8 +26,8 @@ public class Products {
         int choice = 0;
         System.out.print("choice >> ");
         while(true){
-            choice = s.nextInt();
-            s.nextLine();
+            choice = k.nextInt();
+            k.nextLine();
             if(!(choice > 0 && choice < 7)){
                 System.out.print("Choice must be between 1 and 6"); 
                 continue;
@@ -48,7 +48,7 @@ public class Products {
             System.out.println("**************************");
             
             System.out.print("Enter the product code:");
-            String prodCode = s.nextLine();
+            String prodCode = k.nextLine();
             for(int i=0;i<ReportData.index;i++){
                 if(storeItems[i]!=null && storeItems[i].getProductCode().equalsIgnoreCase(prodCode)){
                     System.out.println("Product "+storeItems[i].getProductName()+" is already in the system");
@@ -58,7 +58,7 @@ public class Products {
             }
             
             System.out.print("Enter the product name:");
-            String prodName = s.nextLine();
+            String prodName = k.nextLine();
             
             System.out.println("");
             System.out.println("Select the product category:");
@@ -70,8 +70,8 @@ public class Products {
             System.out.print("Product category >> ");
             int category;
             while(true){
-                category = s.nextInt();
-                s.nextLine();
+                category = k.nextInt();
+                k.nextLine();
                 if(category < 1 || category > 5){
                     System.out.println("Category has to be between 1 and 5");
                     continue;
@@ -80,7 +80,7 @@ public class Products {
             }
             System.out.println("");
             System.out.print("Indicate the product warranty. Enter (1) for 6 months or any other key for 2 years. ");
-            String warranty = s.nextLine();
+            String warranty = k.nextLine();
             double warrantyMonths;
             if("1".equals(warranty.trim())){
                 warrantyMonths = 6.0;
@@ -92,8 +92,8 @@ public class Products {
             System.out.print("Enter the price for " + prodName + " >> ");
             double price;
             while(true){
-                price = s.nextDouble();
-                s.nextLine();
+                price = k.nextDouble();
+                k.nextLine();
                 if(price < 0){
                     System.out.println("Price cannot be negative,Enter price again:");
                     continue;
@@ -104,8 +104,8 @@ public class Products {
             int stock;
             while(true){
                 System.out.print("Enter Stock level for " + prodName + " >> ");
-                stock = s.nextInt();
-                s.nextLine();
+                stock = k.nextInt();
+                k.nextLine();
                 if(stock < 0){
                     System.out.println("Stock cannot be negative");
                     continue;
@@ -114,7 +114,7 @@ public class Products {
             }
             
             System.out.print("Enter the supplier for " + prodName + " >> ");
-            String supplier = s.nextLine();
+            String supplier = k.nextLine();
             
             ReportData i1 = new ReportData(prodCode.trim(), prodName.trim(), warrantyMonths, category, price, stock, supplier);
             SaveProduct(i1);
@@ -130,7 +130,7 @@ public class Products {
 
     public static void SearchProduct(){
         System.out.print("Please enter the product code to search: ");
-        String prodCode = s.nextLine();
+        String prodCode = k.nextLine();
         
         for(int i = 0; i < ReportData.index; i++){
             if(storeItems[i] != null && storeItems[i].getProductCode().equals(prodCode)){
@@ -153,14 +153,14 @@ public class Products {
     
     public static void DeleteProduct(){
         System.out.print("Please enter the product code to delete: ");
-        String prodCode = s.nextLine();
+        String prodCode = k.nextLine();
         boolean found = false;
         
         for(int i = 0; i < ReportData.index; i++){//loop condition is designed to avoid going out of bounds
             if(storeItems[i] != null && storeItems[i].getProductCode().equals(prodCode)){//check if the index we on is not null helps avoid outOfBounds error
                 found = true;
                 System.out.println("Are you sure that you want to delete? (y) for yes, any other key to cancel");
-                String confirm = s.nextLine();
+                String confirm = k.nextLine();
                 if("y".equalsIgnoreCase(confirm.trim())){
                     
                     //loop for shifting things left 
@@ -186,7 +186,7 @@ public class Products {
     }
     public static void UpdateProduct(){
     System.out.print("Please enter the product code to update: ");
-    String prodCod = s.nextLine().trim();
+    String prodCod = k.nextLine().trim();
     boolean code = false;
     
     for(int i = 0; i < ReportData.index; i++){
@@ -196,7 +196,7 @@ public class Products {
             // updating the product name section
             System.out.print("Update the warranty? (y) Yes, (n) No ");
             while(true){
-                String warrInput = s.nextLine().trim().toLowerCase();
+                String warrInput = k.nextLine().trim().toLowerCase();
                 if(warrInput.isEmpty()){
                     System.out.print("Please enter 'y' or 'n': ");
                     continue;
@@ -205,7 +205,7 @@ public class Products {
                 
                 if(warr == 'y'){
                     System.out.print("Indicate the new product warranty. Enter (1) for 6 months or any other key for 2 years. ");
-                    String warranty = s.nextLine();
+                    String warranty = k.nextLine();
                     if("1".equals(warranty.trim())){
                         storeItems[i].setWarranty(6);
                     }
@@ -226,7 +226,7 @@ public class Products {
             // updating the price section
             System.out.print("Update the price? (y) Yes, (n) No ");
             while(true){
-                String costInput = s.nextLine().trim().toLowerCase();
+                String costInput = k.nextLine().trim().toLowerCase();
                 if(costInput.isEmpty()){
                     System.out.print("Please enter 'y' or 'n': ");
                     continue;
@@ -236,8 +236,8 @@ public class Products {
                 if(cost == 'y'){
                     while(true){
                         System.out.print("Enter the new price for >> " + storeItems[i].getProductName() + " ");
-                        double p = s.nextDouble();
-                        s.nextLine();
+                        double p = k.nextDouble();
+                        k.nextLine();
                         storeItems[i].setPrice(p);
                         break;
                     } 
@@ -255,7 +255,7 @@ public class Products {
             // updating the stock level section
             System.out.print("Update the stock level? (y) Yes, (n) No ");
             while(true){
-                String choiceInput = s.nextLine().trim().toLowerCase();
+                String choiceInput = k.nextLine().trim().toLowerCase();
                 
                 if (choiceInput.isEmpty()) {
                     System.out.print("Please enter 'y' or 'n': ");
@@ -267,8 +267,8 @@ public class Products {
                 if(stok == 'y'){
                     while(true){
                         System.out.print("Enter the new stock level for " + storeItems[i].getProductName() + " >> ");
-                        int st = s.nextInt();
-                        s.nextLine();
+                        int st = k.nextInt();
+                        k.nextLine();
                         
                         if(st >= 0){
                             storeItems[i].setStockLevels(st);//changing stock level
