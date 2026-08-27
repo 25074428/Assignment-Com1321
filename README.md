@@ -2,8 +2,8 @@
 PERPOSE OF EACH PROJECT IN THIS ASSIGNMENT
 
 1.JavaApplication1 
--The purpose of the the JavaApplication1 Class is to act as the main controller of the application. It starts the program, displays the welcome screen, accepts user input, launches the menu, and calls the appropriate methods in the Products class based on the user's selection.
--This class is responsible for running the application and managing user navigation through the system.
+-The purpose of the the JavaApplication1 Class is to act as the main controller of the application. It starts the program, displays the welcome screen, accepts user input, launches the menu, and calls the appropriate methods in the Products class based on the user's selection.-This class is responsible for running the application and managing user navigation through the system.
+
 
 2.Products Class
 -Purpose: The purpose of the Products class is to handle all product management operations. It contains the business logic that allows users to add, search, update, delete, and report on products stored in the system.This class performs all actions related to products and manages the product records stored in the application.
