@@ -301,7 +301,8 @@ public class Products {
         System.out.println("Product not found");//message to the user
         
     }
-}
+}     
+    //Declaring a method named PrintProductReport 
     public static void PrintProductReport(){
         System.out.println("PRODUCT REPORT");
         System.out.println("=====================================================================================");
@@ -310,9 +311,11 @@ public class Products {
             System.out.println("No products available.");
             System.out.println("");
             
-            return;
+            return;//exits the methopds, by passing the rest of the code
         }
+        //initializes decimal tracking variable named total
         double total = 0;
+        //A sequential loop
         for(int i = 0; i < ReportData.index; i++){
             total += storeItems[i].getPrice() * storeItems[i].getstockLevels();
             System.out.println("PRODUCT " + (i + 1));
